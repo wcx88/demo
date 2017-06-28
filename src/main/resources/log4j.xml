@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+    <appender name="A1" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p (%F:%L)-%m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="INFO"/>
+            <param name="levelMax" value="FATAL"/>
+        </filter>
+    </appender>
+    <appender name="info"
+              class="org.apache.log4j.DailyRollingFileAppender">   
+        <param name="File"
+               value="${catalina.home}/logs/info.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-4r  %-5p (%F:%L) %10c %3x - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="INFO"/>
+            <param name="levelMax" value="FATAL"/>
+        </filter>
+    </appender>
+    <appender name="all"
+              class="org.apache.log4j.DailyRollingFileAppender">   
+        <param name="File"
+               value="${catalina.home}/logs/all.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-4r  %-5p (%F:%L) %10c %3x - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="DEBUG"/>
+            <param name="levelMax" value="FATAL"/>
+        </filter>
+    </appender>
+    <appender name="sql"
+              class="org.apache.log4j.DailyRollingFileAppender">   
+        <param name="File"
+               value="${catalina.home}/logs/sql.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-4r  %-5p (%F:%L) %10c %3x - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="DEBUG"/>
+            <param name="levelMax" value="FATAL"/>
+        </filter>
+    </appender>
+    <category name="org.apache">
+        <priority value="WARN"/>
+    </category>
+    <root>
+        <priority value="DEBUG"/>
+        <appender-ref ref="A1"/>
+        <appender-ref ref="info"/>
+        <appender-ref ref="all"/>
+        <appender-ref ref="sql"/>
+    </root>
+
+</log4j:configuration>
