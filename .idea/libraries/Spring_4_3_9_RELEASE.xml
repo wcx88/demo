@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Spring-4.3.9.RELEASE" type="spring">
+    <properties version="4.3.9.RELEASE" />
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/apache-tomcat-7.0.78/lib" />
+      <root url="file://$PROJECT_DIR$/apache-tomcat-7.0.78/webapps/HelloSpring/WEB-INF/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/apache-tomcat-7.0.78/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/apache-tomcat-7.0.78/webapps/HelloSpring/WEB-INF/lib" recursive="false" />
+  </library>
+</component>
